@@ -55,6 +55,6 @@ module.exports.seed = (knex, Promise) => {
           expDate: '2018-07-10'
         }
       ])
-    .then(() => knex.raw ('ALTER SEQUENCE fed_id_seq RESTART WITH 8;'));
+    .then(() => knex.raw ('ALTER SEQUENCE pantry_id_seq RESTART WITH 8;'));
     });
 };

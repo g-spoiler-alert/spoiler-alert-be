@@ -1,11 +1,11 @@
 
 module.exports.up = (knex, Promise) => {
-  return knex.schema.createTable('item', (item) => {
-    item.increments().primary();
-    item.integer('user_id').references('user.id').unsigned().onDelete('CASCADE');
-    item.text('name');
-    item.text('type');
-    item.date('expDate');
+  return knex.schema.createTable('item', (table) => {
+    table.increments().primary();
+    table.integer('user_id').references('user.id').unsigned().onDelete('CASCADE');
+    table.text('name');
+    table.text('type');
+    table.date('expDate');
   })
 };
 
