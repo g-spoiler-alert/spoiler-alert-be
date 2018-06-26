@@ -2,7 +2,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgres:///3000'
+    connection: 'postgres:///spoiler-alert-be'
   },
 
   production: {
