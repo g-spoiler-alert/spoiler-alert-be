@@ -4,7 +4,9 @@
   "description": "The API and db for Spoiler Alert! Uses Node/Express, Knex.js, and PostgreSQL",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -14,7 +16,7 @@
     "server",
     "backend"
   ],
-  "author": "Garth Stevens, Kaitlin Ramirez, Keith Jones, JR Rockenmacher, Tim Hurley",
+  "authors": "Garth Stevens, Kaitlin Ramirez, Keith Jones, JR Rockenmacher, Tim Hurley",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yhtomitim/spoiler-alert-be/issues"
