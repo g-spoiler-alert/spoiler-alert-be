@@ -1,10 +1,10 @@
 
 module.exports.seed = (knex, Promise) => {
   // Deletes ALL existing entries
-  return knex('pantry').del()
+  return knex('item').del()
     .then(() => {
       // Inserts seed entries
-      return knex('pantry').insert([
+      return knex('item').insert([
         {
           id: 1,
           user_id: 1,
@@ -55,6 +55,6 @@ module.exports.seed = (knex, Promise) => {
           expDate: '2018-07-10'
         }
       ])
-    .then(() => knex.raw ('ALTER SEQUENCE pantry_id_seq RESTART WITH 8;'));
+    .then(() => knex.raw ('ALTER SEQUENCE item_id_seq RESTART WITH 8;'));
     });
 };
