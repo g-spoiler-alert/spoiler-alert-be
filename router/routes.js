@@ -11,4 +11,13 @@ router.get('/pantry', (req, res, next) => {
     .then(items => {res.json({items})})
 })
 
+router.get('/users', (req, res, next) => {
+  queries.readUsers()
+    .then(users => {
+      res.json({
+        users
+      })
+    })
+})
+
 module.exports = router
