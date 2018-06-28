@@ -23,4 +23,10 @@ router.get('/users', (req, res, next) => {
     .catch(next);
 })
 
+router.post('/newuser', (req, res, next) => {
+  queries.createUser(req.body)
+    .then(user => res.status(201).json({ message: 'welcome' }))
+    .catch(next);
+})
+
 module.exports = router

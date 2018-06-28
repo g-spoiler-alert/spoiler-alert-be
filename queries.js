@@ -6,5 +6,9 @@ module.exports = {
   },
   readItem() {
     return database('item')
+  },
+  createUser(user) {
+    return database('user')
+      .insert(user, '*')
   }
 }
