@@ -16,5 +16,11 @@ module.exports = {
   createUser(user) {
     return database('user')
       .insert(user, '*')
+        .insert(item)
+        .returning('*')
+        .then(record => record[0])
+  },
+  deleteItem(id){
+    return database('item').delete().where('id', id)
   }
 }
