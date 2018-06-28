@@ -7,11 +7,12 @@ module.exports = {
   readItem() {
     return database('item')
   },
-  createItem(item){
+  createItem(item) {
     return database('item').select()
-        .insert(item)
-        .returning('*')
-        .then(record => record[0])
+      .insert(item)
+      .returning('*')
+      .then(record => record[0])
+  },
   createUser(user) {
     return database('user')
       .insert(user, '*')
