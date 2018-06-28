@@ -13,6 +13,14 @@ router.get('/pantry', (req, res, next) => {
     .catch(next);
 })
 
+router.post("/newitem", (req, res, next) => {
+  queries.createItem(req.body)
+  .then(item => {
+      res.status(201).json({item})
+  })
+  .catch(next);
+})
+
 router.get('/users', (req, res, next) => {
   queries.readUsers()
     .then(users => {
