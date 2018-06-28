@@ -21,6 +21,14 @@ router.post("/newitem", (req, res, next) => {
   .catch(next);
 })
 
+router.put("/:id.update", (request, response, next) => {
+  queries.updateItem(request.params.id, request.body)
+  .then(item => {
+      response.json({item});
+  })
+  .catch(next);
+})
+
 router.delete("/:id", (req, res, next) => {
   queries.deleteItem(req.params.id)
   .then(() => {
