@@ -6,5 +6,11 @@ module.exports = {
   },
   readItem() {
     return database('item')
+  },
+  createItem(item){
+    return database('item').select()
+        .insert(item)
+        .returning('*')
+        .then(record => record[0])
   }
 }
