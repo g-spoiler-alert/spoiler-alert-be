@@ -8,10 +8,21 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/pantry', (req, res, next) => {
-  queries.readItem()
+  queries.readItems()
     .then(items => { res.json({ items }) })
     .catch(next);
 })
+
+router.get('/pantry/:userid', (req, res, next) => {
+  queries.readUserItems(req.params.userid)
+    .then(items => {
+      res.json({
+        items
+      })
+    })
+    .catch(next);
+})
+
 
 router.post("/newitem", (req, res, next) => {
   queries.createItem(req.body)

@@ -4,8 +4,12 @@ module.exports = {
   readUsers() {
     return database('user')
   },
-  readItem() {
+  readItems() {
     return database('item')
+  },
+  readUserItems(id) {
+    return database('item')
+      .where("user_id", id)
   },
   createItem(item) {
     return database('item').select()
