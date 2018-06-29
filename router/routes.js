@@ -61,11 +61,21 @@ router.get('/users', (req, res, next) => {
 router.get('/users/:username', (req, res, next) => {
   queries.matchUser(req.params.username)
     .then(user => {
-      res.json({user})
+      if(user.length > 0){
+        res.json({user})
+      }
+      else{
+        const newUser = { username: req.params.username}
+        queries.createUser(newUser)
+    .then(user => res.status(201).json({user}))
+    .catch(next)
+      }
     })
 })
 
 router.post('/newuser', (req, res, next) => {
+  console.log(req.body);
+  
   queries.createUser(req.body)
     .then(user => res.status(201).json({ message: 'welcome' }))
     .catch(next);
