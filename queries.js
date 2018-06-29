@@ -20,9 +20,12 @@ module.exports = {
   createUser(user) {
     return database('user')
       .insert(user, '*')
-        .insert(item)
         .returning('*')
         .then(record => record[0])
+  },
+  matchUser(username){
+    return database('user')
+      .where('username', username)
   },
   updateItem(id, item){
     return database('item')

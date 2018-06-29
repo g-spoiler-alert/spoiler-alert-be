@@ -58,6 +58,13 @@ router.get('/users', (req, res, next) => {
     .catch(next);
 })
 
+router.get('/users/:username', (req, res, next) => {
+  queries.matchUser(req.params.username)
+    .then(user => {
+      res.json({user})
+    })
+})
+
 router.post('/newuser', (req, res, next) => {
   queries.createUser(req.body)
     .then(user => res.status(201).json({ message: 'welcome' }))
