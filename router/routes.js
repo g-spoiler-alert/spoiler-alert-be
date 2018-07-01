@@ -32,7 +32,7 @@ router.post("/newitem", (req, res, next) => {
   .catch(next);
 })
 
-router.put("/:id.update", (request, response, next) => {
+router.put("/:id", (request, response, next) => {
   queries.updateItem(request.params.id, request.body)
   .then(item => {
       response.json({item});
@@ -75,7 +75,7 @@ router.get('/users/:username', (req, res, next) => {
 
 router.post('/newuser', (req, res, next) => {
   console.log(req.body);
-  
+
   queries.createUser(req.body)
     .then(user => res.status(201).json({ message: 'welcome' }))
     .catch(next);

@@ -53,8 +53,15 @@ module.exports.seed = (knex, Promise) => {
           name: 'Crackers',
           type: 'Grain',
           expDate: '2018-07-10'
+        },
+        {
+          id: 8,
+          user_id: 2,
+          name: 'Pizza',
+          type: 'Other',
+          expDate: '2018-07-10'
         }
       ])
-    .then(() => knex.raw ('ALTER SEQUENCE item_id_seq RESTART WITH 8;'));
+    .then(() => knex.raw ('ALTER SEQUENCE item_id_seq RESTART WITH 9;'));
     });
 };
