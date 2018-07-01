@@ -24,7 +24,7 @@ router.get('/pantry/:userid', (req, res, next) => {
 })
 
 
-router.post("/newitem", (req, res, next) => {
+router.post("/pantry/newitem", (req, res, next) => {
   queries.createItem(req.body)
   .then(item => {
       res.status(201).json({item})
@@ -32,7 +32,7 @@ router.post("/newitem", (req, res, next) => {
   .catch(next);
 })
 
-router.put("/:id", (request, response, next) => {
+router.put("/pantry/item/:id", (request, response, next) => {
   queries.updateItem(request.params.id, request.body)
   .then(item => {
       response.json({item});
@@ -40,7 +40,7 @@ router.put("/:id", (request, response, next) => {
   .catch(next);
 })
 
-router.delete("/:id", (req, res, next) => {
+router.delete("/pantry/delete/:id", (req, res, next) => {
   queries.deleteItem(req.params.id)
   .then(() => {
       res.status(204).json({deleted: true})
@@ -64,7 +64,7 @@ router.get('/users/:username', (req, res, next) => {
       if(user.length > 0){
         res.json({user})
       }
-      else{
+      else {
         const newUser = { username: req.params.username}
         queries.createUser(newUser)
     .then(user => res.status(201).json({user}))
@@ -74,8 +74,6 @@ router.get('/users/:username', (req, res, next) => {
 })
 
 router.post('/newuser', (req, res, next) => {
-  console.log(req.body);
-
   queries.createUser(req.body)
     .then(user => res.status(201).json({ message: 'welcome' }))
     .catch(next);
