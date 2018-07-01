@@ -31,10 +31,10 @@ router.post("/pantry/newitem", (req, res, next) => {
   .catch(next)
 })
 
-router.put("/pantry/item/:id", (request, response, next) => {
-  queries.updateItem(request.params.id, request.body)
+router.put("/pantry/item/:id", (req, res, next) => {
+  queries.updateItem(req.params.id, req.body)
     .then(item => {
-      response.json({item})
+      res.json({item})
   })
   .catch(next)
 })

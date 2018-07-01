@@ -10,7 +10,7 @@ module.exports = {
   },
   readUserItems(id) {
     return database('item')
-      .where("user_id", id)
+      .where('user_id', id)
   },
   createItem(item) {
     return database('item').select()
@@ -21,8 +21,8 @@ module.exports = {
   createUser(user) {
     return database('user')
       .insert(user)
-        .returning('*')
-        .then(record => record[0])
+      .returning('*')
+      .then(record => record[0])
   },
   matchUser(username){
     return database('user')
@@ -31,12 +31,14 @@ module.exports = {
   },
   updateItem(id, item){
     return database('item')
-        .update(item)
-        .where('id', id)
-        .returning('*')
-        .then(record => record[0])
+      .update(item)
+      .where('id', id)
+      .returning('*')
+      .then(record => record[0])
 },
   deleteItem(id){
-    return database('item').delete().where('id', id)
+    return database('item')
+      .where('id', id)
+      .del()
   }
 }
