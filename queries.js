@@ -6,6 +6,7 @@ module.exports = {
   },
   readItems() {
     return database('item')
+      .orderBy('expDate', 'ascI')
   },
   readUserItems(id) {
     return database('item')
