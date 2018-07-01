@@ -22,14 +22,14 @@ module.exports.seed = (knex, Promise) => {
         {
           id: 3,
           user_id: 3,
-          name: 'Turkey',
+          name: 'Ham',
             type: 'Meat',
             expDate: '2018-07-06'
         },
         {
           id: 4,
           user_id: 1,
-          name: 'Turkey',
+          name: 'Steak',
           type: 'Meat',
           expDate: '2018-07-07'
         },
@@ -59,7 +59,7 @@ module.exports.seed = (knex, Promise) => {
           user_id: 2,
           name: 'Pizza',
           type: 'Other',
-          expDate: '2018-07-10'
+          expDate: '2018-07-11'
         }
       ])
     .then(() => knex.raw ('ALTER SEQUENCE item_id_seq RESTART WITH 9;'));
