@@ -23,8 +23,8 @@ module.exports.seed = (knex, Promise) => {
           id: 3,
           user_id: 3,
           name: 'Ham',
-            type: 'Meat',
-            expDate: '2018-07-06'
+          type: 'Meat',
+          expDate: '2018-07-06'
         },
         {
           id: 4,
