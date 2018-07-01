@@ -1,9 +1,7 @@
 
 module.exports.seed = (knex, Promise) => {
-  // Deletes ALL existing entries
   return knex('item').del()
     .then(() => {
-      // Inserts seed entries
       return knex('item').insert([
         {
           id: 1,
@@ -62,6 +60,6 @@ module.exports.seed = (knex, Promise) => {
           expDate: '2018-07-11'
         }
       ])
-    .then(() => knex.raw ('ALTER SEQUENCE item_id_seq RESTART WITH 9;'));
-    });
-};
+    .then(() => knex.raw ('ALTER SEQUENCE item_id_seq RESTART WITH 9;'))
+    })
+}

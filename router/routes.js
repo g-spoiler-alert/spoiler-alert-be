@@ -1,16 +1,16 @@
-const express = require("express");
+const express = require("express")
 const router = express.Router()
 const queries = require('../queries')
 
 router.get('/', (req, res, next) => {
   res.send({ message: 'this is working, but under construction!' })
-  .catch(next)
+    .catch(next)
 })
 
 router.get('/pantry', (req, res, next) => {
   queries.readItems()
     .then(items => { res.json({ items }) })
-    .catch(next);
+    .catch(next)
 })
 
 router.get('/pantry/:userid', (req, res, next) => {
@@ -20,29 +20,28 @@ router.get('/pantry/:userid', (req, res, next) => {
         items
       })
     })
-    .catch(next);
+    .catch(next)
 })
-
 
 router.post("/pantry/newitem", (req, res, next) => {
   queries.createItem(req.body)
-  .then(item => {
+    .then(item => {
       res.status(201).json({item})
   })
-  .catch(next);
+  .catch(next)
 })
 
 router.put("/pantry/item/:id", (request, response, next) => {
   queries.updateItem(request.params.id, request.body)
-  .then(item => {
-      response.json({item});
+    .then(item => {
+      response.json({item})
   })
-  .catch(next);
+  .catch(next)
 })
 
 router.delete("/pantry/delete/:id", (req, res, next) => {
   queries.deleteItem(req.params.id)
-  .then(() => {
+    .then(() => {
       res.status(204).json({deleted: true})
   })
   .catch(next)
@@ -55,7 +54,7 @@ router.get('/users', (req, res, next) => {
         users
       })
     })
-    .catch(next);
+    .catch(next)
 })
 
 router.get('/users/:username', (req, res, next) => {
@@ -66,9 +65,9 @@ router.get('/users/:username', (req, res, next) => {
       }
       else {
         const newUser = { username: req.params.username}
-        queries.createUser(newUser)
-    .then(user => res.status(201).json({user}))
-    .catch(next)
+          queries.createUser(newUser)
+            .then(user => res.status(201).json({user}))
+            .catch(next)
       }
     })
 })
@@ -76,7 +75,7 @@ router.get('/users/:username', (req, res, next) => {
 router.post('/newuser', (req, res, next) => {
   queries.createUser(req.body)
     .then(user => res.status(201).json({ message: 'welcome' }))
-    .catch(next);
+    .catch(next)
 })
 
 module.exports = router
