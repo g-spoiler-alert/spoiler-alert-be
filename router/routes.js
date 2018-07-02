@@ -3,7 +3,7 @@ const router = express.Router()
 const queries = require('../queries')
 
 router.get('/', (req, res, next) => {
-  res.send({ message: 'this is working, but under construction!' })
+  res.send({ message: 'Welcome to the Spoiler Alert API.' })
     .catch(next)
 })
 
