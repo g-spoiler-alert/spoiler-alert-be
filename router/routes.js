@@ -20,6 +20,7 @@ router.get('/pantry/:userid', (req, res, next) => {
         items
       })
     })
+    .orderBy('expDate', 'asc')
     .catch(next)
 })
 
