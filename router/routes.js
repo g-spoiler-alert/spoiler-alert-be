@@ -19,8 +19,8 @@ router.get('/pantry/:userid', (req, res, next) => {
       res.json({
         items
       })
+      .orderBy('expDate', 'asc')
     })
-    .orderBy('expDate', 'asc')
     .catch(next)
 })
 
