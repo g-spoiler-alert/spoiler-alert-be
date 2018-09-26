@@ -8,7 +8,6 @@ module.exports.seed = (knex, Promise) => {
           user_id: 1,
           name: 'Turkey',
           type: 'Meat',
-          // image: '../assets/Meat.jpg',
           expDate: '2018-07-04'
         },
         {
@@ -16,7 +15,6 @@ module.exports.seed = (knex, Promise) => {
           user_id: 2,
           name: 'Tomato',
           type: 'Produce',
-          // image: '../assets/Produce.jpg',
           expDate: '2018-07-05'
         },
         {
@@ -24,7 +22,6 @@ module.exports.seed = (knex, Promise) => {
           user_id: 3,
           name: 'Ham',
           type: 'Meat',
-          image: '../assets/Meat.jpg',
           expDate: '2018-07-06'
         },
         {
@@ -32,7 +29,6 @@ module.exports.seed = (knex, Promise) => {
           user_id: 1,
           name: 'Steak',
           type: 'Meat',
-          // image: '../assets/meat.jpg',
           expDate: '2018-07-07'
         },
         {
@@ -40,7 +36,6 @@ module.exports.seed = (knex, Promise) => {
           user_id: 2,
           name: 'Frozen Peas',
           type: 'Produce',
-          // image: '../assets/Produce.jpg',
           expDate: '2018-07-08'
         },
         {
@@ -48,7 +43,6 @@ module.exports.seed = (knex, Promise) => {
           user_id: 3,
           name: 'Cheese',
           type: 'Dairy',
-          // image: '../assets/Dairy.jpg',
           expDate: '2018-07-09'
         },
         {
@@ -56,7 +50,6 @@ module.exports.seed = (knex, Promise) => {
           user_id: 1,
           name: 'Crackers',
           type: 'Grain',
-          // image: '../assets/Grain.jpg',
           expDate: '2018-07-10'
         },
         {
@@ -64,7 +57,6 @@ module.exports.seed = (knex, Promise) => {
           user_id: 2,
           name: 'Pizza',
           type: 'Other',
-          // image: '../assets/Other.jpg',
           expDate: '2018-07-11'
         }
       ])
