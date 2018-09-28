@@ -5,6 +5,7 @@ module.exports.up = (knex, Promise) => {
     table.integer('user_id').references('user.id').unsigned().onDelete('CASCADE')
     table.text('name')
     table.text('type')
+    table.text('imgUrl')
     table.date('expDate')
   })
 };

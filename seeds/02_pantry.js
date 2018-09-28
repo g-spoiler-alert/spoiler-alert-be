@@ -8,6 +8,7 @@ module.exports.seed = (knex, Promise) => {
           user_id: 1,
           name: 'Turkey',
           type: 'Meat',
+          imgUrl: 'http://gdurl.com/kiqv',
           expDate: '2018-07-04'
         },
         {
@@ -15,6 +16,7 @@ module.exports.seed = (knex, Promise) => {
           user_id: 2,
           name: 'Tomato',
           type: 'Produce',
+          imgUrl: 'http://gdurl.com/d9iR',
           expDate: '2018-07-05'
         },
         {
@@ -22,6 +24,7 @@ module.exports.seed = (knex, Promise) => {
           user_id: 3,
           name: 'Ham',
           type: 'Meat',
+          imgUrl: 'http://gdurl.com/kiqv',
           expDate: '2018-07-06'
         },
         {
@@ -29,6 +32,7 @@ module.exports.seed = (knex, Promise) => {
           user_id: 1,
           name: 'Steak',
           type: 'Meat',
+          imgUrl: 'http://gdurl.com/kiqv',
           expDate: '2018-07-07'
         },
         {
@@ -36,6 +40,7 @@ module.exports.seed = (knex, Promise) => {
           user_id: 2,
           name: 'Frozen Peas',
           type: 'Produce',
+          imgUrl: 'http://gdurl.com/d9iR',
           expDate: '2018-07-08'
         },
         {
@@ -43,6 +48,7 @@ module.exports.seed = (knex, Promise) => {
           user_id: 3,
           name: 'Cheese',
           type: 'Dairy',
+          imgUrl: 'http://gdurl.com/MX62',
           expDate: '2018-07-09'
         },
         {
@@ -50,6 +56,7 @@ module.exports.seed = (knex, Promise) => {
           user_id: 1,
           name: 'Crackers',
           type: 'Grain',
+          imgUrl: 'http://gdurl.com/0u50',
           expDate: '2018-07-10'
         },
         {
@@ -57,6 +64,7 @@ module.exports.seed = (knex, Promise) => {
           user_id: 2,
           name: 'Pizza',
           type: 'Other',
+          imgUrl: 'http://gdurl.com/6adX',
           expDate: '2018-07-11'
         }
       ])
